@@ -1,0 +1,46 @@
+.commentComponent {
+  display: flex;
+  flex: 1;
+  padding: 0.2em;
+  border: 1px solid red;
+}
+
+.avatar {
+  height: 36px;
+  width: 36px;
+  border-radius: 2em;
+  padding: 0.2em;
+  margin: 0.2em;
+}
+
+.commentHeader {
+  display: flex;
+  align-items: center;
+}
+.userName {
+  padding: 0.6em;
+
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.timeDiff {
+  font-size: 12px;
+  padding: 0.6em;
+  margin-left: 0.66;
+}
+
+.body {
+  flex: 2;
+  padding: 0.2em;
+}
+
+.comment {
+  padding: 0.6em;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row-reverse;
+}

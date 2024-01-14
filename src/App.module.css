@@ -1,0 +1,9 @@
+@media only screen and (min-width: 600px) {
+  .commentSection {
+    background-color: #89fc00;
+    width: 44em;
+    border: 2px solid red;
+    margin: 2em;
+    padding: 0.2em;
+  }
+}

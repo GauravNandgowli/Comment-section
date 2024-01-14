@@ -1,0 +1,7 @@
+.commentSection {
+  background-color: moccasin;
+  min-height: 10em;
+  width: calc(100% - 2em);
+  /* margin: 1em; */
+  border: 1px solid black;
+}

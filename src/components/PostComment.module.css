@@ -1,0 +1,28 @@
+.PostComment {
+  /* background-color: red; */
+  /* border: 1px solid black; */
+  display: flex;
+
+  min-height: 10em;
+  padding: 1em;
+}
+
+.avatarSection {
+  /* background-color: aqua; */
+  /* flex: 1; */
+}
+
+.editable {
+  /* background-color: purple; */
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.textarea {
+  flex: 2;
+  /* background-color: yellow; */
+  width: 100%;
+  /* height: 80%; */
+}
