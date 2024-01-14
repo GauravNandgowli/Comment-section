@@ -1,11 +1,11 @@
 import styles from "./Button.module.css";
 
-function Button({ type, handlePost }) {
+function Button({ type, handlePost, handleReply }) {
   return (
     <button
       className={styles.button}
       onClick={(e) => {
-        handlePost(e);
+        handlePost ? handlePost(e) : handleReply(e);
       }}
     >
       {type}

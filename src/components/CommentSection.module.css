@@ -1,7 +1,11 @@
 .commentSection {
   background-color: moccasin;
-  min-height: 10em;
-  width: calc(100% - 2em);
-  /* margin: 1em; */
+  min-height: 50em;
+  width: 100%;
+
   border: 1px solid black;
+}
+
+.commentSection {
+  /* display: flex; */
 }

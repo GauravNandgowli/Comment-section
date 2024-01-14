@@ -1,7 +1,8 @@
 import styles from "./CommentComponent.module.css";
 import Button from "./Button";
+import { useRef } from "react";
 
-function CommentComponent({ comment }) {
+function CommentComponent({ comment, handleReply, key }) {
   const currentDate = new Date();
   const commentDate = new Date(comment.commentDate);
 
@@ -28,26 +29,40 @@ function CommentComponent({ comment }) {
     timeDifference = `${Math.round(diffSeconds)} seconds ago`;
   }
 
+  const width = `calc(100% - ${comment.level * 1}em)`;
+
   return (
     <>
-      <div className={styles.commentComponent}>
-        <span className={styles.avatarSection}>
-          <img src={comment.avatar} className={styles.avatar} />
-        </span>
-        <div className={styles.body}>
-          <div className={styles.commentHeader}>
-            <span className={styles.userName}>
-              <a>{comment.userName}</a>
-            </span>
-            <span className={styles.timeDiff}>{timeDifference}</span>
-          </div>
-          <div className={styles.commentBox}>
-            <p className={styles.comment}>{comment.comment}</p>
-          </div>
-          <span className={styles.btn}>
-            <Button type="reply"></Button>
+      <div className={styles.comment} style={{ width }}>
+        <div className={styles.commentComponent}>
+          <span className={styles.avatarSection}>
+            <img src={comment.avatar} className={styles.avatar} />
           </span>
+          <div className={styles.body}>
+            <div className={styles.commentHeader}>
+              <span className={styles.userName}>
+                <a>{comment.userName}</a>
+              </span>
+              <span className={styles.timeDiff}>{timeDifference}</span>
+            </div>
+            <div className={styles.commentBox}>
+              <p className={styles.commentText}>{comment.comment}</p>
+            </div>
+            <span className={styles.btn}>
+              <Button handleReply={handleReply} type="reply"></Button>
+            </span>
+          </div>
         </div>
+        {comment.reply.length > 0
+          ? comment.reply.map((replyComment) => {
+              return (
+                <CommentComponent
+                  key={replyComment.userid}
+                  comment={replyComment}
+                />
+              );
+            })
+          : null}
       </div>
     </>
   );
